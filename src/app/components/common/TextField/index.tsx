@@ -14,7 +14,7 @@ export const TextField = ({
   ...rest
 }: textFieldProps): React.ReactElement => {
   return (
-    <div className="flex flex-col gap-y-2">
+    <div className="flex flex-col gap-y-2 w-full">
       {label && <label className="text-sm font-medium">{label}</label>}
       <div
         className={`flex items-center gap-x-2 border border-border border-light-gray rounded-lg px-4 py-2 ${className}`}
