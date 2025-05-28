@@ -17,7 +17,7 @@ export const TextField = ({
     <div className="flex flex-col gap-y-2 w-full">
       {label && <label className="text-sm font-medium">{label}</label>}
       <div
-        className={`flex items-center gap-x-2 border border-border border-light-gray rounded-lg px-4 py-2 ${className}`}
+        className={`w-full flex items-center gap-x-2 border border-border border-light-gray rounded-lg px-4 py-2 ${className}`}
       >
         {icon && <span className="text-tertiary ">{icon}</span>}
         <input
