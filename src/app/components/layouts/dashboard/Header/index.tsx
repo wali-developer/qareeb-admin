@@ -3,6 +3,7 @@
 import React from "react";
 import { ProfileDropdown } from "../ProfileDropdown";
 import { IoNotificationsOutline } from "react-icons/io5";
+import { FiSearch } from "react-icons/fi";
 
 export const Header = ({
   onShow,
@@ -12,10 +13,11 @@ export const Header = ({
   return (
     <header className="w-full px-5 py-3 sm:py-5 flex flex-wrap lg:flex-nowrap lg:py-8 gap-y-4 justify-between items-center">
       <div className="relative rounded-md">
+        <FiSearch className="text-xl text-gray-300 absolute top-1/2 left-3 -translate-y-1/2" />
         <input
           type="text"
           placeholder="Search here"
-          className="w-md h-11 rounded-md border-2 border-gray-300 focus:outline-secondary bg-white text-sm px-5"
+          className="w-md h-11 rounded-md border-2 border-gray-300 focus:outline-secondary bg-white text-sm pl-10 pr-5"
         />
       </div>
       <div className="flex gap-x-4 xl:gap-x-8 items-center ml-auto">

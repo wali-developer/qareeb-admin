@@ -32,7 +32,7 @@ const DashboardLayout = ({ children }: ILayout): React.ReactElement => {
             setShow(true);
           }}
         />
-        <main className="px-4 sm:px-6 py-5 min-h-[89vh]">{children}</main>
+        <main className="px-4 sm:px-6 pb-10 min-h-[89vh]">{children}</main>
       </div>
     </section>
   );
