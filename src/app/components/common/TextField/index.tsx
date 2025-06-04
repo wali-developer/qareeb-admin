@@ -17,7 +17,9 @@ export const TextField = ({
 }: textFieldProps): React.ReactElement => {
   return (
     <div className="flex flex-col gap-y-2 w-full ">
-      {label && <label className="text-sm font-medium">{label}</label>}
+      {label && (
+        <label className="text-sm font-medium text-start">{label}</label>
+      )}
       <div
         className={`w-full h-[44px] flex items-center gap-x-2 bg-input-background border border-border border-light-gray shadow rounded-lg px-4 ${className}`}
       >
