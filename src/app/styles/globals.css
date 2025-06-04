@@ -14,7 +14,7 @@
   --color-light-gray: #d5d7da;
   --color-input-background: #f8fafc;
   --color-light-blue-outline: #eaf0f7;
-  --color-orange: #eaf0f7;
+  --color-dark-gray: #808b9a;
 }
 
 .bg-primary-gradient {
@@ -28,9 +28,15 @@
   background-clip: text;
   color: transparent;
 }
-/* .text-primary-gradient {
+.text-primary-gradient {
   color: var(--color-primary-gradient);
-} */
+}
+
+.input-gradient-focus:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0),
+    0 0 0 4px var(--color-primary-gradient);
+}
 
 .resContainer {
   width: 90%;
