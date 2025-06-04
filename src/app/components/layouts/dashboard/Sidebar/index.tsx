@@ -26,17 +26,17 @@ export const menu: IMenuItem[] = [
   },
   {
     title: "Bookings",
-    path: "#",
+    path: routes.bookings,
     icon: <LuCalendarDays />,
   },
   {
     title: "User management",
-    path: "#",
+    path: routes.users,
     icon: <LuUsersRound />,
   },
   {
     title: "Company management",
-    path: "#",
+    path: routes.companies,
     icon: <PiUsersThreeBold />,
   },
   {

@@ -1,3 +1,5 @@
+import React from "react";
+import { NextPage } from "next";
 import { Typography } from "@/app/components/common";
 import {
   DashboardStats,
@@ -5,9 +7,8 @@ import {
   TotalRevenueChart,
   VendorsDashboard,
 } from "@/app/components/dashboard";
-import React from "react";
 
-const DashboardPage = () => {
+const DashboardPage: NextPage = () => {
   return (
     <section className="space-y-6">
       <Typography variant="h2" className="!font-medium">

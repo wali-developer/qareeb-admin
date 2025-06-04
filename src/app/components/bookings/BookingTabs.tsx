@@ -2,22 +2,28 @@
 
 import { useState } from "react";
 
-const tabs = ["All", "Approved", "Pending"];
+const tabs = [
+  "All Bookings",
+  "Active Bookings",
+  "Completed Bookings",
+  "Cancelled Bookings",
+  "Custom Bookings",
+];
 
 export const BookingTabs = () => {
-  const [activeTab, setActiveTab] = useState("All");
+  const [activeTab, setActiveTab] = useState(tabs[0]);
 
   return (
-    <div className="flex gap-3 mb-4 overflow-x-auto">
+    <div className="flex gap-3 py-4 overflow-x-auto border-b border-gray-200">
       {tabs.map((tab) => (
         <button
           key={tab}
           onClick={() => setActiveTab(tab)}
-          className={`px-4 py-1.5 rounded-full text-sm font-medium border transition 
+          className={`px-5 py-2 cursor-pointer rounded-full text-sm transition 
             ${
               activeTab === tab
-                ? "bg-indigo-600 text-white border-indigo-600"
-                : "bg-white text-gray-600 border-gray-300"
+                ? "text-white bg-primary-gradient"
+                : "bg-transparent text-secondary/70"
             }`}
         >
           {tab}

@@ -5,7 +5,7 @@ import { Dialog, DialogPanel, Transition } from "@headlessui/react";
 
 interface IModal {
   isOpen: boolean;
-  onClose: () => void;
+  onClose: React.Dispatch<React.SetStateAction<boolean>>;
   children: React.ReactNode;
 }
 

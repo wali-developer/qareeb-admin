@@ -6,6 +6,7 @@
     rgba(239, 61, 56, 1) 0%,
     rgba(248, 154, 50, 1) 100%
   );
+  --color-primary: #f53d3d;
   --color-secondary: #0e0e0e;
   --color-tertiary: #7c7c7c;
   --color-white: #ffffff;

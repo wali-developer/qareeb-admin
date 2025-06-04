@@ -28,9 +28,9 @@ const DashboardLayout = ({ children }: ILayout): React.ReactElement => {
       />
       <div className="flex-1 bg-gray/60">
         <Header
-          onShow={() => {
-            setShow(true);
-          }}
+        // onShow={() => {
+        //   setShow(true);
+        // }}
         />
         <main className="px-4 sm:px-6 pb-10 min-h-[89vh]">{children}</main>
       </div>

@@ -10,6 +10,7 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import { FilterSelect, Typography } from "../common";
+import type { TooltipProps } from "recharts";
 
 const data = [
   { month: "Jan", revenue: 20000 },
@@ -26,12 +27,11 @@ const data = [
   { month: "Dec", revenue: 59000 },
 ];
 
-// Custom tooltip component
-const CustomTooltip = ({ active, payload }: any) => {
+const CustomTooltip = ({ active, payload }: TooltipProps<number, string>) => {
   if (active && payload?.length) {
     return (
       <div className="bg-blue-500 text-white px-3 py-1 rounded text-xs font-semibold shadow">
-        {payload[0].value.toLocaleString(undefined, {
+        {payload[0].value?.toLocaleString(undefined, {
           maximumFractionDigits: 2,
         })}
       </div>

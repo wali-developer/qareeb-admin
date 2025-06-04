@@ -1,18 +1,24 @@
 export const Pagination = () => {
   return (
-    <div className="flex justify-end mt-4">
-      <nav className="inline-flex -space-x-px text-sm rounded-md shadow-sm border border-gray-300 overflow-hidden">
-        <button className="px-3 py-2 bg-white text-gray-500 hover:bg-gray-100">
-          Previous
-        </button>
-        <button className="px-3 py-2 bg-indigo-600 text-white">1</button>
-        <button className="px-3 py-2 bg-white text-gray-500 hover:bg-gray-100">
-          2
-        </button>
-        <button className="px-3 py-2 bg-white text-gray-500 hover:bg-gray-100">
-          Next
-        </button>
-      </nav>
-    </div>
+    <nav className="flex justify-between text-sm overflow-hidden mt-10">
+      <button className="px-4 py-1.5 bg-white cursor-pointer font-medium text-gray-500 hover:bg-gray-100 rounded-md border border-gray-300">
+        Previous
+      </button>
+      <div className="inline-flex gap-3">
+        {Array.from({ length: 7 }).map((__, i) => (
+          <button
+            key={i}
+            className={`px-4 py-1.5 hover:bg-gray-100 rounded-lg text-secondary cursor-pointer ${
+              i == 0 ? "bg-gray-100" : "bg-white"
+            }`}
+          >
+            {i + 1}
+          </button>
+        ))}
+      </div>
+      <button className="px-4 py-1.5 bg-white cursor-pointer font-medium text-gray-500 hover:bg-gray-100 rounded-md border border-gray-300">
+        Next
+      </button>
+    </nav>
   );
 };

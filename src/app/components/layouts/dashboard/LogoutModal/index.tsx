@@ -5,7 +5,15 @@ import { DialogTitle } from "@headlessui/react";
 import Modal from "@/app/components/common/Modal";
 import { LuLogOut } from "react-icons/lu";
 
-export const LogoutModal = ({ isOpen, setIsOpen }: any): React.ReactElement => {
+interface LogoutModalProps {
+  isOpen: boolean;
+  setIsOpen: (open: boolean) => void;
+}
+
+export const LogoutModal = ({
+  isOpen,
+  setIsOpen,
+}: LogoutModalProps): React.ReactElement => {
   const handleLogout = (): void => {
     // Your logout logic
     setIsOpen(false);
