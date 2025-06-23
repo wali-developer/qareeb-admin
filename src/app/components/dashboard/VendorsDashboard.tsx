@@ -54,7 +54,7 @@ export const VendorsDashboard = () => {
       key: "name",
       header: "Name",
       render: (v) => (
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 pr-3 whitespace-nowrap">
           <Image
             src={v.image}
             alt={v.name}
@@ -86,7 +86,7 @@ export const VendorsDashboard = () => {
 
   return (
     <div className="col-span-2 border border-gray-300 rounded-xl p-4 bg-white shadow-sm">
-      <div className="flex justify-between items-center mb-4">
+      <div className="flex justify-between flex-wrap gap-2 items-center mb-4">
         <Typography variant="h4" className="!font-medium">
           Qareeb Vendor
         </Typography>

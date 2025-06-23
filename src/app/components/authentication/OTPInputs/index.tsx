@@ -27,7 +27,7 @@ export const OTPInputs = () => {
   };
 
   return (
-    <div className="flex items-center gap-x-3">
+    <div className="flex items-center gap-x-6">
       {[0, 1, 2, 3].map((_, i) => (
         <div
           key={i}

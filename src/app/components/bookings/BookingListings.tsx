@@ -6,7 +6,7 @@ import { BookingsTable } from "./BookingsTable";
 export const BookingListings = () => {
   return (
     <section className="mt-8">
-      <div className="flex justify-between items-center">
+      <div className="flex justify-between flex-wrap gap-3 items-center">
         <SearchInput className="max-w-[370px] " />
         <DateRangePicker />
       </div>

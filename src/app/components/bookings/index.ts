@@ -1,4 +1,3 @@
-export * from "./BookingTabs";
 export * from "./BookingSearchRow";
 export * from "./StatusBadge";
 export * from "./BookingListings";

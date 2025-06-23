@@ -48,7 +48,7 @@ export const ProfileDropdown = (): React.ReactElement => {
                 W
               </span>
             </div>
-            <div className="flex gap-x-3 items-center">
+            <div className="flex sm:gap-x-3 items-center">
               <div className="space-y-1">
                 <Typography
                   variant="small-bold"
@@ -77,18 +77,18 @@ export const ProfileDropdown = (): React.ReactElement => {
             leaveFrom="transform opacity-100 scale-100"
             leaveTo="transform opacity-0 scale-95"
           >
-            <MenuItems className="absolute right-0 mt-2 w-52 origin-top-right bg-white shadow-md  focus:outline-none outline-none py-4 z-50 transition-all duration-300 rounded-lg border border-gray-200">
+            <MenuItems className="absolute right-0 mt-2 w-40 origin-top-right bg-white shadow-md  focus:outline-none outline-none py-3 z-50 transition-all duration-300 rounded-lg border border-gray-200">
               <div className="px-1">
                 {links.map((item, index) => (
                   <MenuItem key={item.name + index}>
                     <Link href={item?.path}>
                       <button
-                        className={`group w-full items-center py-2.5 px-4 flex gap-x-2 hover:bg-secondary/5`}
+                        className={`group w-full items-center py-2 px-3 flex gap-x-2 hover:bg-secondary/5`}
                       >
-                        <span className="text-xl text-gray-500">
+                        <span className="text-lg text-gray-500">
                           {item.icon}
                         </span>
-                        <Typography className="!text-[15px] text-gray-500">
+                        <Typography variant="medium" className="text-gray-500">
                           {item.name}
                         </Typography>
                       </button>
@@ -97,13 +97,13 @@ export const ProfileDropdown = (): React.ReactElement => {
                 ))}
 
                 <button
-                  className={`group w-full items-center py-2.5 px-4 flex gap-x-2 hover:bg-secondary/5`}
+                  className={`group w-full items-center py-2 px-3 flex gap-x-2 hover:bg-secondary/5`}
                   onClick={() => setIsOpen(true)}
                 >
-                  <span className="text-xl text-red-500">
+                  <span className="text-lg text-red-500">
                     <FiLogOut />
                   </span>
-                  <Typography className="!text-[15px] text-red-500">
+                  <Typography variant="medium" className="text-red-500">
                     Logout
                   </Typography>
                 </button>

@@ -14,8 +14,8 @@ interface ReusableTableProps<T> {
 
 export function Table<T>({ columns, data, rowKey }: ReusableTableProps<T>) {
   return (
-    <div className="overflow-x-auto w-full">
-      <table className="min-w-full text-[13px] text-left">
+    <div className="noScrollbar overflow-x-auto w-full">
+      <table className="min-w-full text-[13px] text-left whitespace-nowrap">
         <thead className="text-secondary/70 bg-gray-50">
           <tr>
             {columns.map((col, idx) => (
@@ -29,12 +29,12 @@ export function Table<T>({ columns, data, rowKey }: ReusableTableProps<T>) {
           {data.map((item, index) => (
             <tr
               key={rowKey(item, index)}
-              className="border-b last:border-b-0 border-gray-200 hover:bg-gray-50 transition"
+              className="border-b last:border-b-0 whitespace-nowrap border-gray-200 hover:bg-gray-50 transition"
             >
               {columns.map((col, idx) => (
                 <td
                   key={idx}
-                  className="px-2 py-3 text-secondary/70 whitespace-nowrap"
+                  className="px-2 py-3 text-secondary/70 text-nowrap whitespace-nowrap"
                 >
                   {col.render
                     ? col.render(item)

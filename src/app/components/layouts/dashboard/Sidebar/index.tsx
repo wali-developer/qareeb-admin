@@ -12,6 +12,7 @@ import Image from "next/image";
 import { PiUsersThreeBold } from "react-icons/pi";
 import { HiOutlineSupport } from "react-icons/hi";
 import { IoSettingsOutline } from "react-icons/io5";
+import Link from "next/link";
 
 interface ISidebar {
   show: boolean;
@@ -40,13 +41,13 @@ export const menu: IMenuItem[] = [
     icon: <PiUsersThreeBold />,
   },
   {
-    title: "Help & Support",
-    path: "#",
+    title: "Customer Support",
+    path: routes.customerSupport,
     icon: <HiOutlineSupport />,
   },
   {
     title: "Settings",
-    path: "#",
+    path: routes.settings,
     icon: <IoSettingsOutline />,
   },
 ];
@@ -58,21 +59,24 @@ export const Sidebar = ({ show, onHide }: ISidebar): React.ReactElement => (
     }`}
   >
     <div className="flex justify-between px-4">
-      <div className="pt-8 pb-12 px-2 flex justify-center lg:flex-1">
+      <Link
+        href={"/"}
+        className="pt-8 pb-12 px-2 flex justify-center lg:flex-1"
+      >
         <Image
           src={"./dashboard/logo.svg"}
           alt="Logo"
           width={124}
           height={39}
         />
-      </div>
+      </Link>
       <button className="text-xl text-primary block lg:hidden" onClick={onHide}>
         <RxCross2 />
       </button>
     </div>
     <ul className="mt-10 lg:mt-0 px-4">
       {menu.map((item, index) => (
-        <MenuItem item={item} key={index} />
+        <MenuItem item={item} key={index} hideMenu={onHide} />
       ))}
     </ul>
   </aside>

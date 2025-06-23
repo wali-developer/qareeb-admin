@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import "./styles/globals.css";
 import { poppins } from "./styles/fonts";
+
+import "./styles/globals.css";
 
 export const metadata: Metadata = {
   title: "Qareeb dashboard",

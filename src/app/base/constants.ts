@@ -4,6 +4,6 @@ export const routes = {
   bookings: "/bookings",
   users: "/users",
   companies: "/companies",
-  helpAndSupport: "/help-and-support",
+  customerSupport: "/customer-support",
   settings: "/settings",
 };

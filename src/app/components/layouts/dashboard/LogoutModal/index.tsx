@@ -2,12 +2,12 @@
 
 import React from "react";
 import { DialogTitle } from "@headlessui/react";
-import Modal from "@/app/components/common/Modal";
 import { LuLogOut } from "react-icons/lu";
+import { Modal } from "@/app/components/common";
 
 interface LogoutModalProps {
   isOpen: boolean;
-  setIsOpen: (open: boolean) => void;
+  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export const LogoutModal = ({
@@ -18,10 +18,9 @@ export const LogoutModal = ({
     // Your logout logic
     setIsOpen(false);
   };
-
   return (
     <>
-      <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>
+      <Modal isOpen={isOpen} setIsOpen={setIsOpen}>
         <div className="flex justify-center">
           <div className="bg-red-50 p-3 rounded-full">
             <LuLogOut className="h-6 w-6 text-red-500" />

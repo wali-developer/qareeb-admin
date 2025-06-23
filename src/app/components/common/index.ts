@@ -4,3 +4,6 @@ export * from "./PasswordField";
 export * from "./Button";
 export * from "./FilterSelect";
 export * from "./SearchInput";
+export * from "./DateRangePicker";
+export * from "./Modal";
+export * from "./Tabs";

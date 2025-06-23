@@ -1,51 +1,29 @@
 "use client";
 
-import { Fragment } from "react";
-import { Dialog, DialogPanel, Transition } from "@headlessui/react";
+import { Dialog, DialogPanel } from "@headlessui/react";
+import React from "react";
 
 interface IModal {
   isOpen: boolean;
-  onClose: React.Dispatch<React.SetStateAction<boolean>>;
+  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
   children: React.ReactNode;
 }
 
-export default function Modal({ isOpen, onClose, children }: IModal) {
-  return (
-    <Transition show={isOpen} as={Fragment}>
-      <Dialog as="div" className="relative z-50" onClose={onClose}>
-        <div className="fixed inset-0 z-40">
-          <Transition.Child
-            as={Fragment}
-            enter="ease-out duration-300"
-            enterFrom="opacity-0"
-            enterTo="opacity-100"
-            leave="ease-in duration-200"
-            leaveFrom="opacity-100"
-            leaveTo="opacity-0"
-          >
-            <div
-              className="fixed inset-0 bg-black/30 backdrop-blur-sm"
-              aria-hidden="true"
-            />
-          </Transition.Child>
-        </div>
-
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-          <Transition.Child
-            as={Fragment}
-            enter="ease-out duration-300"
-            enterFrom="opacity-0 scale-95"
-            enterTo="opacity-100 scale-100"
-            leave="ease-in duration-200"
-            leaveFrom="opacity-100 scale-100"
-            leaveTo="opacity-0 scale-95"
-          >
-            <DialogPanel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-center shadow-xl transition-all">
-              {children}
-            </DialogPanel>
-          </Transition.Child>
-        </div>
-      </Dialog>
-    </Transition>
-  );
-}
+export const Modal = ({
+  isOpen,
+  setIsOpen,
+  children,
+}: IModal): React.ReactElement => (
+  <Dialog
+    open={isOpen}
+    onClose={setIsOpen}
+    transition
+    className="fixed inset-0 top-0 backdrop-blur-sm h-screen overflow-y-auto items-center bg-black/50 transition duration-300 ease-out data-[closed]:opacity-0 z-[99] p-3"
+  >
+    <div className="flex justify-center min-h-full w-full items-center">
+      <DialogPanel className={"bg-white rounded-xl w-max md:rounded-3xl"}>
+        {children}
+      </DialogPanel>
+    </div>
+  </Dialog>
+);

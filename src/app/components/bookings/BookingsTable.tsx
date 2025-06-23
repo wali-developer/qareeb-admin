@@ -6,6 +6,7 @@ import { Table, TableColumn } from "../common/Table";
 import Image from "next/image";
 import { Pagination } from "../common/Pagination";
 import { BookingDetails } from "./BookingDetails";
+import { statusColors } from "@/app/base/helpers";
 
 const bookings = [
   {
@@ -40,12 +41,6 @@ const bookings = [
   },
 ];
 
-const colors: Record<string, { color: string; bg: string }> = {
-  Pending: { color: "#007AFF", bg: "#ECFDF3" },
-  Completed: { color: "#027A48", bg: "#007AFF1A" },
-  Cancelled: { color: "#FF3B30", bg: "#FF3B301A" },
-};
-
 export const BookingsTable = () => {
   const [show, setShow] = useState(false);
   const bookingsColumns: TableColumn<(typeof bookings)[0]>[] = [
@@ -60,7 +55,7 @@ export const BookingsTable = () => {
             alt={v.username}
             width={40}
             height={40}
-            className="w-10 h-10 rounded-full object-cover"
+            className="w-10 h-10 rounded-full object-cover hidden md:block"
           />
           <span className="font-medium text-secondary">{v.username}</span>
         </div>
@@ -70,13 +65,13 @@ export const BookingsTable = () => {
       key: "volunteerName",
       header: "Volunteer Name",
       render: (v) => (
-        <div className="flex items-center gap-2">
+        <div className="flex items-center  gap-2">
           <Image
             src={v.image}
             alt={v.volunteerName}
             width={40}
             height={40}
-            className="w-10 h-10 rounded-full object-cover"
+            className="w-10 h-10 rounded-full object-cover hidden md:block"
           />
           <span className="font-medium text-secondary">{v.volunteerName}</span>
         </div>
@@ -88,15 +83,15 @@ export const BookingsTable = () => {
       header: "Status",
       render: (booking) => (
         <span
-          className={`inline-flex gap-2 items-center text-xs px-2 font-medium py-1 rounded-full `}
+          className={`inline-flex gap-2 items-center text-xs px-2 font-medium py-1 rounded-full`}
           style={{
-            color: colors[booking.status].color,
-            backgroundColor: colors[booking.status].bg,
+            color: statusColors[booking.status].color,
+            backgroundColor: statusColors[booking.status].bg,
           }}
         >
           <span
             className="w-[6px] h-[6px] shrink-0 rounded-full"
-            style={{ backgroundColor: colors[booking.status].color }}
+            style={{ backgroundColor: statusColors[booking.status].color }}
           />
           {booking.status}
         </span>
